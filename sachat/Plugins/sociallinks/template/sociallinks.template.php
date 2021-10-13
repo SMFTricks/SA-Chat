@@ -5,7 +5,6 @@ if (!defined('SMF'))
 function load_soc_js(&$data){
 	
 	$data .='
-		$sachat.getScript(\'http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-503f263237ff99da\');
 			
 		function getSocial (social) {
 			if (social == \'myspace\') {

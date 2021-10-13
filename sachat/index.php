@@ -44,7 +44,7 @@
 	$modSettings = initModSettings();
 	
 	//SMF Cookie autentication!!!
-	list ($member_id, $password) = initCookies();
+	$member_id = initCookies();
 	
 	// Register a error handler
 	set_error_handler('errorHandler');

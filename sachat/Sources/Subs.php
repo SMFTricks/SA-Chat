@@ -156,15 +156,15 @@
 		global $cookiename;
 
 		if (isset($_COOKIE[$cookiename]) && preg_match('~^a:[34]:\{i:0;(i:\d{1,6}|s:[1-8]:"\d{1,8}");i:1;s:(0|40):"([a-fA-F0-9]{40})?";i:2;[id]:\d{1,14};(i:3;i:\d;)?\}$~i', $_COOKIE[$cookiename]) == 1) {
-			list ($member_id, $password) = @unserialize($_COOKIE[$cookiename]);
-			$member_id = !empty($member_id) && strlen($password) > 0 ? (int) $member_id : 0;
+			list ($id_member, $password) = @unserialize($_COOKIE[$cookiename]);
+			$id_member = !empty($id_member) && strlen($password) > 0 ? (int) $id_member : 0;
 
-			return array($member_id, $password);
+			return $id_member;
 		} elseif (isset($_COOKIE[$cookiename])) {
-			list ($member_id, $password) = @unserialize(stripslashes($_COOKIE[$cookiename]));
-			$member_id = !empty($member_id) && strlen($password) > 0 ? (int) $member_id : 0;
+			list ($id_member, $password, $login_span) = @unserialize($_SESSION['login_' . $cookiename]);
+			$id_member = !empty($id_member) && strlen($password) > 0 ? (int) $id_member : 0;
 
-			return array($member_id, $password);
+			return $id_member;
 		}
 	}
 

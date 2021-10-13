@@ -158,14 +158,14 @@
 					}
 				}
 			/*}*/
-			$context['online_count'] = count(isset($context['friends']) ? $context['friends'] : null);
+			$context['online_count'] = count(isset($context['friends']) ? $context['friends'] : []);
 		}
 		if ($type == 'list') {
 			$data = buddy_list_template();
 			return $data;
 		}
 		if ($type == 'count') {
-			return count(isset($context['friends']) ? $context['friends'] : null);
+			return count(isset($context['friends']) ? $context['friends'] : []);
 		}
 	}
 	

@@ -75,10 +75,10 @@
 					'from' => 'int',
 					'msg' => 'string',
 					'sent' => 'string',
-					'isrd' => 'int'
+					'isrd' => 'string'
 				), 
 				array(
-					$buddy_id, $member_id, htmlspecialchars(stripslashes(strip_tags($_REQUEST['msg'],'<a>')), ENT_QUOTES),date("Y-m-d H:i:s"),0
+					$buddy_id, $member_id, htmlspecialchars(stripslashes(strip_tags($_REQUEST['msg'],'<a>')), ENT_QUOTES),date("Y-m-d H:i:s"),date("Y-m-d H:i:s")
 				), 
 				array()
 			);	

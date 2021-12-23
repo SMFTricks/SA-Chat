@@ -89,7 +89,7 @@
 			}
 			$smcFunc['db_free_result']($request);
 		}
-		if (!empty($modSettings['permission_enable_deny']) && empty($user_settings['permissions']))
+		if (!empty($modSettings['permission_enable_deny']))
 			$user_settings['permissions'] = array_diff($user_settings['permissions'], $removals);
 	}
 	
